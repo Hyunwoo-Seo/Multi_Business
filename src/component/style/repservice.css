@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  color: orange;
+}
+
+.rep-container-wrapper {
+  display: flex;
+  overflow: scroll;
+}
+
+.rep-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 500px;
+  margin: 20px;
+}
+
+.image-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+  border: 2px black solid;
+  border-radius: 30px;
+}
+
+.rep-contents {
+  margin-top: 5px;
+}
+
+.rep-contents h3 {
+  color: #7B65F6;
+}

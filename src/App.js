@@ -1,25 +1,16 @@
-
+import logo from './logo.svg';
 import './App.css';
-import { TitleContainer, Title } from './components/Title';
-import Footer from './components/Footer';
-import HomeContent from './components/HomeContent';
+import Nav from './component/navbar';
+import Repservice from './component/repservice';
 
 function App() {
   return (
-    <div className="App">
-      {/*    <Header/> */}
-      <TitleContainer>
-        <Title />
-      </TitleContainer>
-
-      <HomeContent />
-
-      {/* <Service></Service> */}
-
-      {/*  <Solution/> */}
-      <Footer />
+    <div>
+      <Nav />
+      <Repservice />
     </div>
   );
 }
 
 export default App;
+
