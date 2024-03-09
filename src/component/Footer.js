@@ -41,7 +41,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContainerLi>
         <dl>
-          <dt><img src="/multi_logo.png" alt="logo" /></dt>
+          <dt><img src="https://www.multicampus.com/img/common/logo_dark.png" alt="multicampus"/></dt>
           <dt>채용안내</dt>
           <dt>이용약관</dt>
           <dt>개인정보처리방침</dt>
