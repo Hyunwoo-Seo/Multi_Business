@@ -27,6 +27,7 @@ const TitleText = styled.h1`
   font-size: 3rem;
   padding-top: 4rem;
   text-shadow: 3px 3px 7px #292702;
+  text-align: left;
 `;
 
 const SubTitle = styled.p`
