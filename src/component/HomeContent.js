@@ -3,12 +3,12 @@
 import styled from "styled-components";
 import Rectangle from "./Rectangle";
 import TextLayOut from "./TextLayOut";
-import image1 from "../img/img1.png"
-import image2 from "../img/img2.png"
-import image3 from "../img/img3.png"
-import image4 from "../img/img4.png"
-import image5 from "../img/img5.png"
-import image6 from "../img/img6.png"
+import image1 from "../img/repservice/img1.png";
+import image2 from "../img/repservice/img2.png";
+import image3 from "../img/repservice/img3.png";
+import image4 from "../img/repservice/img4.png";
+import image5 from "../img/repservice/img5.png";
+import image6 from "../img/repservice/img6.png";
 
 
 const HomeContainer1 = styled.div`
