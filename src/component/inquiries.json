@@ -1,0 +1,14 @@
+[
+    {
+      "inquiryType": "제품 문의",
+      "name": "홍길동"
+    },
+    {
+      "inquiryType": "배송 문의",
+      "name": "이몽룡"
+    },
+    {
+      "inquiryType": "결제 문의",
+      "name": "성춘향"
+    }
+  ]

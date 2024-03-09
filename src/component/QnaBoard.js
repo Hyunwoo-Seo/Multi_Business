@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './QnaBoard.css';
+import './style/QnaBoard.css';
+import inquiriesData from './inquiries.json';
 
 function QnaBoard() {
   const [inquiries, setInquiries] = useState([]);
 
   useEffect(() => {
     // 로컬 스토리지에서 데이터 가져오기
-    const storedInquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
-    setInquiries(storedInquiries);
+    // const storedInquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+    // setInquiries(storedInquiries);
+    setInquiries(inquiriesData);
   }, []);
 
   return (
