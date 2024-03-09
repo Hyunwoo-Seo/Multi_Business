@@ -23,19 +23,29 @@ const StyledNav = styled.nav`
   a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
   }
+  
 
 `;
 
 const Navbar = () => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+
   return (
     <header>
       <StyledNav>
         <img src="/multi_logo.png" alt="logo" />
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">대표 서비스</a></li>
-          <li><a href="#">솔루션</a></li>
+          <li><a onClick={() => scrollToSection("services")}>대표 서비스</a></li>
+          <li><a onClick={() => scrollToSection("solutions")}>솔루션</a></li>
           <li><a href="#">문의하기</a></li>
           <li><a href="#">Login</a></li>
         </ul>
