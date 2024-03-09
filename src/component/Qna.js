@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  const [inquiryType, setInquiryType] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [inquiry, setInquiry] = useState('');
+function Qna() {
+  const [inquiryType, setInquiryType] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [inquiry, setInquiry] = useState("");
 
   const handleInquiryTypeChange = (e) => {
     setInquiryType(e.target.value);
@@ -39,14 +38,14 @@ function App() {
     };
 
     // 로컬 스토리지에 데이터 저장
-    localStorage.setItem('inquiry', JSON.stringify(newInquiry));
+    localStorage.setItem("inquiry", JSON.stringify(newInquiry));
 
     // 폼 초기화
-    setInquiryType('');
-    setName('');
-    setPhone('');
-    setEmail('');
-    setInquiry('');
+    setInquiryType("");
+    setName("");
+    setPhone("");
+    setEmail("");
+    setInquiry("");
   };
 
   return (
@@ -80,12 +79,13 @@ function App() {
             <label>문의 내용</label>
             <textarea value={inquiry} onChange={handleInquiryChange} />
           </div>
-          <button className="btn-submit" type="submit">문의하기</button>
+          <button className="btn-submit" type="submit">
+            문의하기
+          </button>
         </form>
-        
       </div>
     </div>
- );
+  );
 }
 
-export default App;
+export default Qna;
