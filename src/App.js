@@ -6,23 +6,24 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Solution from "./component/Solution";
 import Qna from "./component/Qna";
 import UserInfoPage from "./component/Mypage";
-import SignUp from "./component/SignUp";
-import Login from "./component/Login";
+import QnaBoard from "./component/QnaBoard";
+import Footer from "./component/Footer";
+import Home from "./component/HomeContent";
 
 function App() {
   return (
     <div>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Nav />
+        <Home />
         <Repservice />
         <Solution />
         <Routes>
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
         </Routes>
-      </BrowserRouter> */}
-      {/* <SignUp /> */}
-      <Login />
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
