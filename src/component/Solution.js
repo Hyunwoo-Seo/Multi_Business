@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import imgAi from "../img/solution/ai.jpg";
-import imgIt from "../img/solution/it.jpg";
+import imgAi from "../img/ai.jpg";
+import imgIt from "../img/it.jpg";
 import { FaLocationArrow } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -56,8 +56,10 @@ const SolutionTextBox = styled.div`
   }
 `;
 
-const Solution = (props) => {
+const Solution = ({id}) => {
   return (
+    <div id={id}>
+
     <SolutionWrapper>
       <SolutionHeader>
         <h2>SOLUTION</h2>
@@ -78,15 +80,15 @@ const Solution = (props) => {
         autoplay={{ delay: 4000 }}
         style={{
           height: "600px",
-
+          
           "--swiper-pagination-color": "#fe6b00",
           "--swiper-navigation-color": "#fe6b00",
         }}
-      >
+        >
         <SwiperSlide>
           <SolutionImg
             style={{ backgroundImage: `url(${imgAi})` }}
-          ></SolutionImg>
+            ></SolutionImg>
           <SolutionTextBox>
             <p>
               국내외 AI직무 현업역량 분석을 통해 개발된 멀티캠퍼스만의 AI교육
@@ -118,6 +120,7 @@ const Solution = (props) => {
         </SwiperSlide>
       </Swiper>
     </SolutionWrapper>
+            </div>
   );
 };
 

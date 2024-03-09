@@ -1,8 +1,10 @@
 import React from "react";
 import './style/repservice.css';
 
-const Repservice = () => {
+const Repservice = ({id}) => {
   return (
+    <div id={id}>
+
     <div style={{marginTop: '40px'}}>
       <h3>대표 서비스</h3>
       <h2>멀티캠퍼스는 창의와 지식 서비스로<br />조직과 개인의 경쟁력을 키우는 기업입니다.</h2>
@@ -51,6 +53,8 @@ const Repservice = () => {
         </div>
       </div>
     </div>
+    
+  </div>
   )
 }
 
