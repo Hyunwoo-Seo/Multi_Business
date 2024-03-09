@@ -16,8 +16,8 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Home />
-        <Repservice />
-        <Solution />
+        <Repservice id="services"/>
+        <Solution id="solutions"/>
         <Routes>
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
