@@ -43,11 +43,24 @@ const Navbar = () => {
       <StyledNav>
         <img src="/multi_logo.png" alt="logo" />
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a onClick={() => scrollToSection("services")}>대표 서비스</a></li>
-          <li><a onClick={() => scrollToSection("solutions")}>솔루션</a></li>
-          <li><a href="#">문의하기</a></li>
-          <li><a href="#">Login</a></li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection("services")}>대표 서비스</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection("solutions")}>솔루션</a>
+          </li>
+          <li>
+            <a href="/qna">문의하기</a>
+          </li>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <a href="/userinfo">마이페이지</a>
+          </li>
         </ul>
       </StyledNav>
     </header>
