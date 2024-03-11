@@ -27,10 +27,18 @@ const FooterContainerLi = styled.div`
   dt {
     float: left;  // dt, dd 한 줄로 출력
     margin-right: 1.5rem;
+
   }
   dd {
     display: block;
     margin-inline-start: 9rem;
+  }
+  a {
+    text-decoration: none;
+    color:  #ccc;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 `
 
@@ -42,14 +50,14 @@ const Footer = () => {
       <FooterContainerLi>
         <dl>
           <dt><img src="https://www.multicampus.com/img/common/logo_dark.png" alt="multicampus"/></dt>
-          <dt>채용안내</dt>
-          <dt>이용약관</dt>
-          <dt>개인정보처리방침</dt>
-          <dt>공지사항</dt>
-          <dt>찾아오시는 길(본사/멀티캠퍼스 선릉·세종대·역삼)</dt>
-          <dt>오픈소스라이선스</dt>
-          <dt>부정제보</dt>
-          <dt>Contact us</dt>
+          <dt><a href='https://multicampus.recruiter.co.kr/career/home'>채용안내</a></dt>
+          <dt><a href='/'>이용약관</a></dt>
+          <dt><a href='/'>개인정보처리방침</a></dt>
+          <dt><a href='https://www.multicampus.com/om/about/sub/reqestBoardList'>공지사항</a></dt>
+          <dt><a href='https://www.multicampus.com/cs/map/mapMain?p_menu=MTA1I01BSU4=&p_gubun=Qw==&req=0'>찾아오시는 길(본사/멀티캠퍼스 선릉·세종대·역삼)</a></dt>
+          <dt><a href='https://www.multicampus.com/main/content/sub/OSLNotice'>오픈소스라이선스</a></dt>
+          <dt><a href='https://ethics.multicampus.com/'>부정제보</a></dt>
+          <dt><a href='/'>Contact us</a></dt>
         </dl>
       </FooterContainerLi>
       <FooterContainerLi>
