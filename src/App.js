@@ -9,14 +9,14 @@ import UserInfoPage from "./component/Mypage";
 import QnaBoard from "./component/QnaBoard";
 import Footer from "./component/Footer";
 import Home from "./component/HomeContent";
-import Title from "./component/Title";
+/* import Title from "./component/Title"; */
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Nav />
-        <Title/>
+/*         <Title/> */
         <Home />
         <Repservice id="services"/>
         <Solution id="solutions"/>
