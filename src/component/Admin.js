@@ -39,7 +39,8 @@ const Button = styled.button`
   border-radius: 5px;
 
   &:hover {
-    cursor: pointer; /* hover 시에 커서 모양 변경 */
+    cursor: pointer; 
+    background-color: #654ea3;
   }
 `
 
@@ -123,7 +124,7 @@ function AdminPage() {
   ];
 
   const handleShowMyInfo = () => {
-    const currentAdminId = 'admin1'; // 임시 관리자 id 설정
+    const currentAdminId = 'admin1'; // 관리자 id 임시 설정
     const admin = admins.find(admin => admin.id === currentAdminId);
     setCurrentAdmin(admin);
     setShowModal(true);

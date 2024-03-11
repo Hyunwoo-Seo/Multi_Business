@@ -41,6 +41,20 @@ const Td = styled.td`
   background-color: white;
 `;
 
+const StyledLink = styled(Link)`
+  display: inline-block;
+  padding: 0.7rem;
+  background-color: #7B65F6;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #654ea3;
+  }
+`;
+
 function MemberDetailInfoPage() {
   const { id } = useParams(); // URL 파라미터에서 id 가져오기
   const [member, setMember] = useState(null);
@@ -81,7 +95,7 @@ function MemberDetailInfoPage() {
           </Table>
 <br/>
         </InfoContainer>
-        <Link to="/admin">뒤로 가기</Link>
+        <StyledLink to="/admin">뒤로 가기</StyledLink>
       </div>
     </AdminContainer>
   );
