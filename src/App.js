@@ -7,19 +7,25 @@ import QnaBoard from "./component/QnaBoard";
 import Footer from "./component/Footer";
 import Home from "./component/HomeContent";
 
-// import Login from "./component/Login"; //import시 CSS충돌!!
+/* import Title from "./component/Title"; */
+import Login from "./component/Login";
+
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Nav />
+/*         <Title/> */
+        <Home />
+        <Repservice id="services"/>
+        <Solution id="solutions"/>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
-          <Route path="/qnaBoard" element={<QnaBoard />}></Route>
-          {/* <Route path="/login" element={<Login />}></Route> */}
+          <Route path="/login" element={<Login />}></Route>
+
         </Routes>
       </BrowserRouter>
       <Footer />

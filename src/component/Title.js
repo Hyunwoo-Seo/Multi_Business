@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TitleBG from '../img/TItleBG.jpeg'
+import TextLayOut from './TextLayOut';
 
 const TitleContainer = styled.div`
   /* background-image: url(${TitleBG}); */
@@ -11,11 +12,12 @@ const TitleContainer = styled.div`
   text-align: left;
   padding: 8rem;
   width: calc(100% - var(--padding)* 2);
-  height: 700px;
+  height: 600px;
 
   @media screen and (max-width: 768px) {
       padding: 3rem;
   }
+  
 
 `;
 
@@ -38,13 +40,13 @@ const SubTitle = styled.p`
 
 const Title = () => {
   return (
-    <div className="title">
+    <TitleContainer>
       <TitleText>개발자가 되는<br/>
         첫걸음, 멀티잇</TitleText>
       <SubTitle>멀티캠퍼스에서 제공하는 서비스를 둘러보세요.</SubTitle>
       
-    </div>
+    </TitleContainer>
   );
 }
 
-export {TitleContainer, Title};
+export default Title;

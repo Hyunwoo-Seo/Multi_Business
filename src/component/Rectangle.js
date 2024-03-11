@@ -24,6 +24,7 @@ const RectangleContainer = styled.div`
   @media screen and (min-width: 1450px) and (max-width: 2199px) {
     width: ${({ expanded }) => (expanded ? "400px" : "390px")};
     margin-bottom: 2rem;
+
   }
   @media screen and (min-width: 900px) and (max-width: 1259px) {
     width: ${({ expanded }) => (expanded ? "350px" : "340px")};
@@ -40,6 +41,10 @@ const Image = styled.img`
   height: 80%;
   object-fit: cover; 
   border-radius: 15px;
+  @media screen and (min-width: 1450px) and (max-width: 2199px) {
+    width: 85%;
+    height: 90%;
+  }
 `;
 
 const Rectangle = ({imgURL}) => {
