@@ -15,6 +15,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Nav />
+        <Title/>
         <Home />
         <Repservice id="services"/>
         <Solution id="solutions"/>
