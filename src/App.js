@@ -6,9 +6,10 @@ import UserInfoPage from "./component/Mypage";
 import QnaBoard from "./component/QnaBoard";
 import Footer from "./component/Footer";
 import Home from "./component/HomeContent";
+
 /* import Title from "./component/Title"; */
 import Login from "./component/Login";
-// import SignUp from "./component/SignUp";
+
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
           <Route path="/login" element={<Login />}></Route>
+
         </Routes>
       </BrowserRouter>
       <Footer />
