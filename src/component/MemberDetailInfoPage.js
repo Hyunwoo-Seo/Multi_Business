@@ -5,19 +5,23 @@ import styled from 'styled-components';
 
 const AdminContainer = styled.div`
   margin: 5rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #dddddd26;
   border-radius: 12px;
-  font-size: 1.3rem;
-  width: 50rem;
+  font-size: 1.2rem;
+/*   width: 50rem; */
+  box-shadow: 2px 2px 10px #ccc;
+
 `;
 
 const InfoContainer = styled.div`
   background-color: white;
   border-radius: 12px;
-  margin: 5rem;
+  margin: 3rem;
   padding: 2rem;
-  width: 40rem;
+/*   width: 40rem; */
+  box-shadow: 2px 2px 10px #ccc;
+
 `
 const Table = styled.table`
   width: 100%;
@@ -36,6 +40,7 @@ const Td = styled.td`
   border: 1px solid #dddddd;
   background-color: white;
 `;
+
 function MemberDetailInfoPage() {
   const { id } = useParams(); // URL 파라미터에서 id 가져오기
   const [member, setMember] = useState(null);

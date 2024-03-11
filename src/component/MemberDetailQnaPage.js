@@ -7,8 +7,9 @@ const AdminContainer = styled.div`
   padding: 2rem;
   background-color: #dddddd26;
   border-radius: 12px;
-  font-size: 1.3rem;
-  width: 50rem;
+  font-size: 1.2rem;
+/*   width: 50rem; */
+  box-shadow: 2px 2px 10px #ccc;
 
 `;
 
@@ -17,8 +18,26 @@ const QnaContainer = styled.div`
   border-radius: 12px;
   margin: 5rem;
   padding: 2rem;
-  width: 40rem;
+/*   width: 40rem; */
+  box-shadow: 2px 2px 10px #ccc;
+
 `
+const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  padding: 5rem;
+`;
+const Th = styled.th`
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+`;
+
+const Td = styled.td`
+  padding: 10px;
+  border: 1px solid #dddddd;
+  background-color: white;
+`;
 
 function MemberDetailQnaPage() {
   const { id } = useParams(); // URL 파라미터에서 id 가져오기
@@ -40,11 +59,24 @@ function MemberDetailQnaPage() {
     <AdminContainer>
       <div>
         <h1>{member.name}님의 문의사항</h1>
+
         <QnaContainer>
-        <p>문의 유형: {member.inquiryType}</p>
+          <Table>
+            <tbody>
+              <tr>
+                <Th>문의 유형</Th>
+                <Td>{member.inquiryType}</Td>
+              </tr>
+              <tr>
+                <Th>문의 내용</Th>
+                <Td>{member.memo}</Td>
+              </tr>
+            </tbody>
+          </Table>
+{/*         <p>문의 유형: {member.inquiryType}</p>
         <hr/>
         <br />
-        <p>문의 내용: {member.memo}</p>
+        <p>문의 내용: {member.memo}</p> */}
         <br/>
         </QnaContainer>
 

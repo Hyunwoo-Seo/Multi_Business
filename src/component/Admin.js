@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -8,6 +8,8 @@ const AdminContainer = styled.div`
   background-color: #dddddd26;
   border-radius: 12px;
   font-size: 1.3rem;
+  box-shadow: 2px 2px 10px #ccc;
+
 `;
 const Table = styled.table`
   width: 100%;
@@ -26,7 +28,45 @@ const Td = styled.td`
   border: 1px solid #dddddd;
 `;
 
+const Button = styled.button`
+  width: 10rem;
+  font-size: 1rem;
+  padding: 0.7rem;
+  margin: 1rem;
+  float: right;
+  background-color: #7B65F6;
+  color: white;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer; /* hover 시에 커서 모양 변경 */
+  }
+`
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: ${({ showModal }) => (showModal ? 'visible' : 'hidden')}; /* 모달 보임 여부 설정 */
+`;
+
+const ModalContent = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+`;
+
 function AdminPage() {
+  const [currentAdmin, setCurrentAdmin] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   const members = [
     {
       "inquiryType": "제품 문의",
@@ -51,6 +91,12 @@ function AdminPage() {
       "phone": "010-9876-5432",
       "address": "인천광역시 남동구",
       "memo": "결제 수단 변경을 요청합니다."
+    },
+    {
+      "name": "이순신",
+      "email": "soon@example.com",
+      "phone": "010-1111-5432",
+      "address": "",
     }
   ];
   // 로컬 스토리지에 데이터 저장
@@ -58,10 +104,60 @@ function AdminPage() {
   // 로컬 스토리지에서 데이터 가져오기
   const storedMembers = JSON.parse(localStorage.getItem('members'));
 
+  const admins = [
+    {
+      id: "admin1",
+      password: "password1",
+      name: "임꺽정"
+    },
+    {
+      id: "admin2",
+      password: "password2",
+      name: "강감찬"
+    },
+    {
+      id: "admin3",
+      password: "password3",
+      name: "한석봉"
+    }
+  ];
 
+  const handleShowMyInfo = () => {
+    const currentAdminId = 'admin1'; // 임시 관리자 id 설정
+    const admin = admins.find(admin => admin.id === currentAdminId);
+    setCurrentAdmin(admin);
+    setShowModal(true);
+  };
+  const closeModal = () => {
+    setShowModal(false);
+  };
   return (
+    <>
     <AdminContainer>
 
+      <div>
+        <h1>관리자 정보</h1>
+          <Button onClick={handleShowMyInfo}>내 정보 보기</Button>
+        <br />
+        <Table>
+          <thead>
+            <tr>
+              <Th>아이디</Th>
+              <Th>이름</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {admins.map((admin, index) => (
+              <tr key={index}>
+                <Td>{admin.id}</Td>
+                <Td>{admin.name}</Td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+    </AdminContainer>
+    <AdminContainer>
     <div>
       <h1>회원 정보</h1>
       <br/>
@@ -85,6 +181,24 @@ function AdminPage() {
       </Table>
     </div>
     </AdminContainer>
+
+    <ModalOverlay showModal={showModal}>
+      <ModalContent>
+
+      {currentAdmin && (
+        <>
+          <div>
+            <h1>{currentAdmin.name}님의 정보</h1><br/>
+            <p>이름: {currentAdmin.name}</p>
+            <p>아이디: {currentAdmin.id}</p>
+            <p>비밀번호: {currentAdmin.password}</p>
+          </div>
+        </>
+      )}
+          <Button onClick={closeModal}>닫기</Button> {/* 모달 닫기 버튼 */}
+      </ModalContent>
+    </ModalOverlay>
+            </>
   );
 }
 
