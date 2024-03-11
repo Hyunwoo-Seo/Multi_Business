@@ -6,7 +6,7 @@ import UserInfoPage from "./component/Mypage";
 import QnaBoard from "./component/QnaBoard";
 import Footer from "./component/Footer";
 import Home from "./component/HomeContent";
-/* import Title from "./component/Title"; */
+import Title from "./component/Title";
 import Login from "./component/Login";
 // import SignUp from "./component/SignUp";
 
@@ -15,7 +15,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Nav />
-/*         <Title/> */
+        <Title/> 
         <Home />
         <Repservice id="services"/>
         <Solution id="solutions"/>
@@ -24,6 +24,9 @@ function App() {
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/admin" element={<AdminPage />}></Route>
+          <Route path="/admin/member/qna/:id" element={<MemberDetailQnaPage />}></Route>
+          <Route path="/admin/member/userinfo/:id" element={<MemberDetailInfoPage />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />
