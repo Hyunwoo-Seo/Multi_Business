@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import imgAi from "../img/ai.jpg";
-import imgIt from "../img/it.jpg";
+import imgAi from "../img/solution/ai.jpg";
+import imgIt from "../img/solution/it.jpg";
 import { FaLocationArrow } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
