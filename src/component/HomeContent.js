@@ -1,5 +1,3 @@
-
-
 import styled from "styled-components";
 import Rectangle from "./Rectangle";
 import TextLayOut from "./TextLayOut";
@@ -9,7 +7,8 @@ import image3 from "../img/repservice/img3.png";
 import image4 from "../img/repservice/img4.png";
 import image5 from "../img/repservice/img5.png";
 import image6 from "../img/repservice/img6.png";
-
+import Repservice from "./repservice";
+import Solution from "./Solution";
 
 const HomeContainer1 = styled.div`
   background-color: #ffffff;
@@ -18,26 +17,23 @@ const HomeContainer1 = styled.div`
   margin-bottom: 3rem;
 
   display: grid;
-  grid-template-columns: repeat(6, 1fr); 
+  grid-template-columns: repeat(6, 1fr);
   place-items: center; // 내부 요소들 가운데 정렬
-/*   gap: 1rem; */
+  /*   gap: 1rem; */
 
   @media screen and (max-width: 2200px) {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media screen and (max-width: 1260px) {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media screen and (max-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
-      padding: 1rem 0rem;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem 0rem;
   }
-
-
 `;
-
 
 const HomeContent = () => {
   return (
@@ -53,6 +49,8 @@ const HomeContent = () => {
         <Rectangle imgURL={image5} />
         <Rectangle imgURL={image6} />
       </HomeContainer1>
+      <Repservice id="services" />
+      <Solution id="solutions" />
     </>
   );
 };
