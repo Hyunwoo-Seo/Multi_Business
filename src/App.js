@@ -6,6 +6,7 @@ import UserInfoPage from "./component/Mypage";
 import QnaBoard from "./component/QnaBoard";
 import Footer from "./component/Footer";
 import Home from "./component/HomeContent";
+
 // import Login from "./component/Login"; //import시 CSS충돌!!
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
+          <Route path="/qnaBoard" element={<QnaBoard />}></Route>
           {/* <Route path="/login" element={<Login />}></Route> */}
         </Routes>
       </BrowserRouter>
