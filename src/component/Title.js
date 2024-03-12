@@ -10,8 +10,7 @@ const TitleContainer = styled.div`
   text-align: left;
   padding: 8rem;
   width: calc(100% - var(--padding)* 2);
-  height: 600px;
-
+  height: 400px;
   @media screen and (max-width: 768px) {
     padding: 3rem;
   }
@@ -40,10 +39,10 @@ const SubTitle = styled.p`
 const Title = () => {
   return (
     <TitleContainer>
-      <TitleText>개발자가 되는<br/>
+      <TitleText>개발자가 되는<br />
         첫걸음, 멀티잇</TitleText>
       <SubTitle>멀티캠퍼스에서 제공하는 서비스를 둘러보세요.</SubTitle>
-      
+
     </TitleContainer>
   );
 }

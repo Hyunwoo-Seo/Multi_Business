@@ -16,6 +16,7 @@ const StyledNav = styled.nav`
     list-style: none;
     flex: 1;
     justify-content: flex-end;
+    margin-right: 20px;
   }
   li {
     margin: 0 10px;

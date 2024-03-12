@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import './QnaBoard.css';
+import './style/QnaBoard.css';
 
 const ModalOverlay = styled.div`
   position: fixed;
