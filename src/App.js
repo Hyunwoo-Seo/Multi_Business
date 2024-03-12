@@ -7,7 +7,6 @@ import QnaBoard from "./component/QnaBoard";
 import Footer from "./component/Footer";
 import Home from "./component/HomeContent";
 // import Login from "./component/Login";  
-
 import Title from "./component/Title";
 import AdminPage from "./component/Admin";
 import MemberDetailQnaPage from "./component/MemberDetailQnaPage";
@@ -26,7 +25,6 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/qna" element={<Qna />}></Route>
           <Route path="/userinfo" element={<UserInfoPage />}></Route>
-
           <Route path="/admin/member/qna/:id" element={<MemberDetailQnaPage />}></Route>
           <Route path="/admin/member/userinfo/:id" element={<MemberDetailInfoPage />}></Route>
 

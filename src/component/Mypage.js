@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import inquiriesData from "./inquiries.json";
+import usersData from "./users.json";
 
 const UserInfoContainer = styled.div`
   margin: 20px;
@@ -92,40 +94,13 @@ const InquiryCount = styled.span`
 `;
 
 const UserInfoPage = () => {
-  const userInfo = {
-    id: "123456",
-    password: "123456",
-    name: "INSIK",
-    phoneNumber: "123-456-7890",
-    email: "INSIK@example.com",
-    inquiries: [
-      {
-        id: 1,
-        inquiryType: "제품 문의",
-        name: "INSIK",
-        content: "문의 1",
-      },
-      {
-        id: 2,
-        inquiryType: "배송 문의",
-        name: "INSIK",
-        content: "문의 2",
-      },
-      {
-        id: 3,
-        inquiryType: "결제 문의",
-        name: "INSIK",
-        content: "문의 3",
-      },
-      {
-        id: 4,
-        inquiryType: "결제 문의",
-        name: "USER",
-        content: "문의 4",
-      },
-    ],
-  };
+  const [userInfo, setUserInfo] = useState(null);
+  const [inquiries, setInquiries] = useState(null);
 
+  useEffect(() => {
+    setUserInfo(usersData[0]);
+    setInquiries(inquiriesData);
+  }, []);
   const [showInquiryContent, setShowInquiryContent] = useState(false);
   const [selectedInquiryContent, setSelectedInquiryContent] = useState("");
   const [selectedInquiryName, setSelectedInquiryName] = useState("");
@@ -147,52 +122,57 @@ const UserInfoPage = () => {
     setShowInquiryContent(true);
   };
 
-  const userInquiries = userInfo.inquiries.filter(
-    (inquiry) => inquiry.name === userInfo.name
-  );
-
   return (
     <UserInfoContainer>
       <Header>Mypage</Header>
-      <UserInfoItem>
-        <UserInfoLabel>ID:</UserInfoLabel>
-        <UserInfoValue>{userInfo.id}</UserInfoValue>
-      </UserInfoItem>
-      <UserInfoItem>
-        <UserInfoLabel>Password:</UserInfoLabel>
-        <UserInfoValue>************</UserInfoValue>
-      </UserInfoItem>
-      <UserInfoItem>
-        <UserInfoLabel>이름:</UserInfoLabel>
-        <UserInfoValue>{userInfo.name}</UserInfoValue>
-      </UserInfoItem>
-      <UserInfoItem>
-        <UserInfoLabel>전화번호:</UserInfoLabel>
-        <UserInfoValue>{userInfo.phoneNumber}</UserInfoValue>
-      </UserInfoItem>
-      <UserInfoItem>
-        <UserInfoLabel>Email:</UserInfoLabel>
-        <UserInfoValue>{userInfo.email}</UserInfoValue>
-      </UserInfoItem>
-      <EditButton onClick={handleOpenModal}>회원 정보 수정</EditButton>
+      {userInfo && (
+        <>
+          <UserInfoItem>
+            <UserInfoLabel>아이디:</UserInfoLabel>
+            <UserInfoValue>{userInfo.id}</UserInfoValue>
+          </UserInfoItem>
+          <UserInfoItem>
+            <UserInfoLabel>비밀번호:</UserInfoLabel>
+            <UserInfoValue>***********</UserInfoValue>
+          </UserInfoItem>
+          <UserInfoItem>
+            <UserInfoLabel>이름:</UserInfoLabel>
+            <UserInfoValue>{userInfo.name}</UserInfoValue>
+          </UserInfoItem>
+          <UserInfoItem>
+            <UserInfoLabel>전화번호:</UserInfoLabel>
+            <UserInfoValue>{userInfo.phoneNumber}</UserInfoValue>
+          </UserInfoItem>
+          <UserInfoItem>
+            <UserInfoLabel>이메일:</UserInfoLabel>
+            <UserInfoValue>{userInfo.email}</UserInfoValue>
+          </UserInfoItem>
+          <EditButton onClick={handleOpenModal}>수정</EditButton>
+        </>
+      )}
+
       <InquiryContainer>
         <UserInfoLabel>내가 작성한 문의:</UserInfoLabel>
-        {userInquiries.map((inquiry) => (
-          <div key={inquiry.id}>
-            <InquiryCount
-              onClick={() =>
-                handleShowInquiryContent(
-                  inquiry.name,
-                  inquiry.inquiryType,
-                  inquiry.content
-                )
-              }
-            >
-              #{inquiry.id}. {inquiry.inquiryType}
-            </InquiryCount>
-            <br />
-          </div>
-        ))}
+        {inquiries &&
+          inquiries.map(
+            (inquiry) =>
+              inquiry.name === userInfo.name && (
+                <div key={inquiry.id}>
+                  <InquiryCount
+                    onClick={() =>
+                      handleShowInquiryContent(
+                        inquiry.name,
+                        inquiry.inquiryType,
+                        inquiry.inquiry
+                      )
+                    }
+                  >
+                    #{inquiry.id}.{inquiry.inquiryType}
+                  </InquiryCount>
+                  <br />
+                </div>
+              )
+          )}
       </InquiryContainer>
       {showInquiryContent && (
         <ModalOverlay>

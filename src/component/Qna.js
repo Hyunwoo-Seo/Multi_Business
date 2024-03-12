@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Qna.css';
 
 function Qna() {
   const [inquiryType, setInquiryType] = useState("");
