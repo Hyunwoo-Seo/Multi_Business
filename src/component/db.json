@@ -1,0 +1,67 @@
+{
+  "members": [
+    {
+      "inquiryType": "제품 문의",
+      "name": "홍길동",
+      "id": "1234",
+      "password": "pw1234",
+      "email": "hong@example.com",
+      "phone": "010-1234-5678",
+      "address": "서울특별시 강남구",
+      "memo": "고객 요청사항이 있습니다."
+    },
+    {
+      "inquiryType": "배송 문의",
+      "name": "이몽룡",
+      "id": "id12",
+      "password": "pw1010",
+      "email": "lee@example.com",
+      "phone": "010-5678-1234",
+      "address": "경기도 수원시",
+      "memo": "배송이 지연되었습니다."
+    },
+    {
+      "inquiryType": "결제 문의",
+      "name": "성춘향",
+      "id": "2024",
+      "password": "pw2000",
+      "email": "seong@example.com",
+      "phone": "010-9876-5432",
+      "address": "인천광역시 남동구",
+      "memo": "결제 수단 변경을 요청합니다."
+    },
+    {
+      "name": "이순신",
+      "id": "lee123",
+      "password": "pw111",
+      "email": "soon@example.com",
+      "phone": "010-1111-5432",
+      "address": ""
+    }
+  ],
+    "admins": [
+      {
+        "id": "admin1",
+        "password": "password1",
+        "name": "임꺽정",
+        "key": "qwer",
+        "workspace": "서울특별시 강남구 테헤란로 123번길 45"
+      },
+      {
+        "id": "admin2",
+        "password": "password2",
+        "name": "강감찬",
+        "key": "asdf",
+        "workspace": "서울특별시 강남구 테헤란로 123번길 45"
+
+      },
+      {
+        "id": "admin3",
+        "password": "password3",
+        "name": "한석봉",
+        "key": "zxcv",
+        "workspace": "경기도 고양시 일산동구 호수로 321번길 67"
+
+      }
+    ]
+}
