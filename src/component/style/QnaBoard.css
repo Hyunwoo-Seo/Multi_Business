@@ -73,7 +73,7 @@ textarea {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #7B65F6;
   color: white;
   border: none;
   border-radius: 5px;
@@ -81,5 +81,5 @@ textarea {
 }
 
 .btn-submit:hover {
-  background-color: #45a049;
+  background-color: #7B65F6;
 }
