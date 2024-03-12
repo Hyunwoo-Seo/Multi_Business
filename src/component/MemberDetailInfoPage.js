@@ -1,7 +1,9 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import db from './db.json';
 
 const AdminContainer = styled.div`
   margin: 5rem;
@@ -9,9 +11,7 @@ const AdminContainer = styled.div`
   background-color: #dddddd26;
   border-radius: 12px;
   font-size: 1.2rem;
-/*   width: 50rem; */
   box-shadow: 2px 2px 10px #ccc;
-
 `;
 
 const InfoContainer = styled.div`
@@ -19,10 +19,9 @@ const InfoContainer = styled.div`
   border-radius: 12px;
   margin: 3rem;
   padding: 2rem;
-/*   width: 40rem; */
   box-shadow: 2px 2px 10px #ccc;
+`;
 
-`
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -44,7 +43,7 @@ const Td = styled.td`
 const StyledLink = styled(Link)`
   display: inline-block;
   padding: 0.7rem;
-  background-color: #7B65F6;
+  background-color: #7b65f6;
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -60,8 +59,8 @@ function MemberDetailInfoPage() {
   const [member, setMember] = useState(null);
 
   useEffect(() => {
-    // 로컬 스토리지에서 회원 정보 데이터 가져오기
-    const storedMembers = JSON.parse(localStorage.getItem('members'));
+    // db.json 파일에서 회원 정보 데이터 가져오기
+    const storedMembers = db.members;
     if (storedMembers && id < storedMembers.length) {
       setMember(storedMembers[id]);
     }
@@ -76,9 +75,12 @@ function MemberDetailInfoPage() {
       <div>
         <h1>{member.name}님의 상세 정보</h1>
         <InfoContainer>
-
           <Table>
             <tbody>
+              <tr>
+                <Th>아이디</Th>
+                <Td>{member.id}</Td>
+              </tr>
               <tr>
                 <Th>이메일</Th>
                 <Td>{member.email}</Td>
@@ -93,7 +95,7 @@ function MemberDetailInfoPage() {
               </tr>
             </tbody>
           </Table>
-<br/>
+          <br />
         </InfoContainer>
         <StyledLink to="/admin">뒤로 가기</StyledLink>
       </div>
