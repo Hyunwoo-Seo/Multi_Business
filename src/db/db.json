@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "email": "test@example.com",
+      "password": "$2a$10$HZ8fSxE2wLpnbI6r2OEus.LLfpZMLyO7Kj9rrTzrNwrG86rY8pzi.",
+      "name": "김철수",
+      "userid": "abc123123",
+      "phone": "010-1234-1234",
+      "id": 1
+    },
+    {
+      "email": "hwanginsick@gmail.com",
+      "password": "$2a$10$VDNqhJCXOkyrlt.9HLG7U.LeSVcdoPzAbyJ7Jblvtu8OL/BrcR.NK",
+      "name": "황인식",
+      "userid": "",
+      "phone": "010-0000-0000",
+      "id": 2
+    },
+    {
+      "email": "hgd123@gmail.com",
+      "password": "$2a$10$2ZpOQodp9coJUl/.KJW.zOpocWrYkhIRL2rl3xhU3kUtKV.E4T1nW",
+      "name": "홍길동",
+      "userid": "",
+      "phone": "010-1111-1111",
+      "id": 3
+    }
+  ],
+  "inquiry": []
+}
