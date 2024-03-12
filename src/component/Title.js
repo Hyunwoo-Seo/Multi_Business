@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import TitleBG from '../img/TItleBG.jpeg'
 import TextLayOut from './TextLayOut';
 
 const TitleContainer = styled.div`
-  /* background-image: url(${TitleBG}); */
   background: linear-gradient(217deg, rgba(124, 143, 206, 0.692), rgba(255, 0, 0, 0) 70.71%),
     linear-gradient(127deg, rgba(99, 61, 204, 0.507), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(199, 192, 90, 0.445), rgba(0, 0, 255, 0) 70.71%);
@@ -15,7 +13,7 @@ const TitleContainer = styled.div`
   height: 600px;
 
   @media screen and (max-width: 768px) {
-      padding: 3rem;
+    padding: 3rem;
   }
   
 
@@ -27,6 +25,7 @@ const TitleText = styled.h1`
   font-size: 3rem;
   padding-top: 4rem;
   text-shadow: 3px 3px 7px #292702;
+  text-align: left;
 `;
 
 const SubTitle = styled.p`
